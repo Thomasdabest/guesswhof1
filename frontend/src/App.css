@@ -1,0 +1,871 @@
+#root {
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+.home {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #35100f 0%,
+      #141414 35%,
+      #080808 75%
+    );
+}
+
+.home-content {
+  width: 100%;
+  max-width: 800px;
+
+  text-align: center;
+}
+
+.logo-small {
+  color: #e10600;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+}
+
+.home h1 {
+  margin: 10px 0;
+
+  font-size:
+    clamp(
+      60px,
+      10vw,
+      120px
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: -7px;
+}
+
+.home h1 span {
+  color: #e10600;
+}
+
+.home h2 {
+  margin-bottom: 10px;
+
+  font-size: 40px;
+}
+
+.home-content > p {
+  color: #999;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-button,
+.secondary-button,
+.exit-button {
+  padding: 13px 24px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.primary-button {
+  margin-top: 25px;
+
+  background: #e10600;
+  color: white;
+
+  border:
+    1px solid #e10600;
+}
+
+.primary-button:hover:not(
+  :disabled
+) {
+  background: #ff1e17;
+
+  transform:
+    translateY(-2px);
+}
+
+.secondary-button {
+  background: #181818;
+  color: white;
+
+  border:
+    1px solid #383838;
+}
+
+.secondary-button:hover:not(
+  :disabled
+) {
+  border-color: #888;
+}
+
+button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   JOIN
+   ========================================================= */
+
+.join-section {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.join-section span {
+  color: #555;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.join-section input {
+  width: 250px;
+
+  padding: 14px;
+
+  background: #151515;
+  color: white;
+
+  border:
+    1px solid #333;
+
+  border-radius: 7px;
+
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  letter-spacing: 4px;
+
+  outline: none;
+}
+
+.join-section input:focus {
+  border-color: #e10600;
+}
+
+.error-message {
+  margin-top: 20px;
+
+  color:
+    #ff514b !important;
+}
+
+
+/* =========================================================
+   WAITING ROOM
+   ========================================================= */
+
+.room-code {
+  width: fit-content;
+
+  margin: 25px auto;
+
+  padding: 20px 35px;
+
+  background: #151515;
+
+  border:
+    1px solid #333;
+
+  border-radius: 10px;
+
+  color: #e10600;
+
+  font-size: 42px;
+  font-weight: 900;
+
+  letter-spacing: 8px;
+}
+
+.waiting {
+  margin: 30px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.waiting p {
+  color: #777;
+}
+
+.spinner {
+  width: 35px;
+  height: 35px;
+
+  border:
+    4px solid #333;
+
+  border-top-color:
+    #e10600;
+
+  border-radius: 50%;
+
+  animation:
+    spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   GAME
+   ========================================================= */
+
+.game {
+  min-height: 100vh;
+
+  padding: 30px;
+
+  background: #0b0b0b;
+
+  color: white;
+}
+
+.game-header {
+  max-width: 1400px;
+
+  margin:
+    0 auto 30px;
+
+  padding-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  border-bottom:
+    1px solid #222;
+}
+
+.game-header h1 {
+  margin:
+    4px 0 6px;
+
+  font-size: 27px;
+}
+
+.game-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #666;
+
+  font-size: 12px;
+}
+
+.connection {
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+}
+
+.connection.online {
+  color: #67d391;
+
+  background:
+    rgba(
+      45,
+      160,
+      90,
+      0.12
+    );
+}
+
+.connection.offline {
+  color: #ff6961;
+
+  background:
+    rgba(
+      225,
+      6,
+      0,
+      0.12
+    );
+}
+
+.header-buttons {
+  display: flex;
+
+  gap: 10px;
+}
+
+.exit-button {
+  background: transparent;
+
+  color: #e10600;
+
+  border:
+    1px solid #5c1714;
+}
+
+.exit-button:hover {
+  background: #e10600;
+
+  color: white;
+}
+
+
+/* =========================================================
+   SECRET DRIVER
+   ========================================================= */
+
+.secret-section {
+  max-width: 1400px;
+
+  margin:
+    0 auto 20px;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  background:
+    linear-gradient(
+      110deg,
+      #1b1b1b,
+      #121212
+    );
+
+  border:
+    1px solid #292929;
+
+  border-left:
+    5px solid #e10600;
+
+  border-radius: 10px;
+}
+
+.section-label {
+  color: #e10600;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+.secret-section h2 {
+  margin:
+    7px 0 4px;
+
+  font-size: 30px;
+}
+
+.secret-section p {
+  margin: 0;
+
+  color: #777;
+}
+
+.secret-number {
+  color: #333;
+
+  font-size: 70px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   QUESTION PANEL
+   ========================================================= */
+
+.question-panel {
+  max-width: 1400px;
+
+  margin:
+    0 auto 30px;
+
+  padding: 25px;
+
+  background: #151515;
+
+  border:
+    1px solid #292929;
+
+  border-radius: 10px;
+}
+
+.question-panel h2 {
+  margin:
+    8px 0 8px;
+}
+
+.question-panel p {
+  margin-top: 0;
+
+  color: #777;
+}
+
+.question-input-row {
+  margin-top: 20px;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.question-input-row input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 15px;
+
+  background: #0d0d0d;
+
+  color: white;
+
+  border:
+    1px solid #333;
+
+  border-radius: 7px;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+.question-input-row input:focus {
+  border-color: #e10600;
+}
+
+.question-input-row
+.primary-button {
+  margin: 0;
+}
+
+.incoming-question {
+  font-size: 25px;
+}
+
+.answer-buttons {
+  margin-top: 20px;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.yes-button,
+.no-button {
+  min-width: 120px;
+
+  padding: 14px 35px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.yes-button {
+  background: #1f8f4e;
+}
+
+.yes-button:hover {
+  background: #26a85d;
+}
+
+.no-button {
+  background: #b3261e;
+}
+
+.no-button:hover {
+  background: #d22d24;
+}
+
+.waiting-answer {
+  margin-top: 18px;
+
+  padding: 14px;
+
+  background: #0d0d0d;
+
+  border-radius: 7px;
+
+  color: #888;
+}
+
+.answer-result {
+  margin-top: 18px;
+
+  padding: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 15px;
+
+  background: #0d0d0d;
+
+  border:
+    1px solid #252525;
+
+  border-radius: 7px;
+
+  color: #aaa;
+}
+
+.answer-result strong {
+  color: white;
+
+  font-size: 24px;
+}
+
+.game-error {
+  margin-top: 15px !important;
+
+  color:
+    #ff514b !important;
+}
+
+
+/* =========================================================
+   BOARD
+   ========================================================= */
+
+.board-header {
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content:
+    space-between;
+}
+
+.board-header h2 {
+  margin-bottom: 4px;
+}
+
+.board-header p {
+  margin-top: 0;
+
+  color: #777;
+}
+
+.remaining {
+  color: #777;
+}
+
+.remaining strong {
+  color: white;
+
+  font-size: 25px;
+}
+
+
+/* =========================================================
+   DRIVER GRID
+   ========================================================= */
+
+.driver-grid {
+  max-width: 1400px;
+
+  margin:
+    20px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        210px,
+        1fr
+      )
+    );
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   DRIVER CARD
+   ========================================================= */
+
+.driver-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 12px;
+
+  background: #151515;
+
+  color: white;
+
+  border:
+    1px solid #292929;
+
+  border-radius: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
+}
+
+.driver-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color: #e10600;
+}
+
+.driver-picture {
+  height: 160px;
+
+  display: flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #292929,
+      #181818
+    );
+
+  border-radius: 7px;
+
+  color: #444;
+
+  font-size: 55px;
+  font-weight: 900;
+}
+
+.driver-number {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  z-index: 2;
+
+  color: #e10600;
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.driver-card h2 {
+  margin:
+    14px 0 5px;
+
+  font-size: 18px;
+}
+
+.driver-card p {
+  margin:
+    0 0 5px;
+
+  color: #888;
+}
+
+.nationality {
+  color: #555;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ELIMINATED DRIVER
+   ========================================================= */
+
+.driver-card.eliminated {
+  opacity: 0.2;
+
+  filter:
+    grayscale(100%);
+}
+
+.driver-card.eliminated:hover {
+  transform: none;
+
+  border-color: #292929;
+}
+
+.eliminated-label {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-15deg);
+
+  padding:
+    8px 15px;
+
+  background: #e10600;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+  max-width: 650px
+) {
+  .game {
+    padding: 15px;
+  }
+
+  .game-header {
+    align-items:
+      flex-start;
+  }
+
+  .game-header h1 {
+    font-size: 20px;
+  }
+
+  .game-meta {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap: 5px;
+  }
+
+  .secret-number {
+    font-size: 45px;
+  }
+
+  .question-input-row {
+    flex-direction:
+      column;
+  }
+
+  .answer-buttons {
+    width: 100%;
+  }
+
+  .yes-button,
+  .no-button {
+    flex: 1;
+  }
+
+  .driver-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+  .driver-picture {
+    height: 120px;
+  }
+
+  .home h1 {
+    letter-spacing: -4px;
+  }
+
+  .room-code {
+    font-size: 30px;
+
+    letter-spacing: 5px;
+  }
+}
